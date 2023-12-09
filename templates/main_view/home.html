@@ -2,20 +2,10 @@
 
 {% block content %}
 
-<!--{% if user.is_authenticated %}-->
-<!--HI {{ user.username }}-->
-<!--<p><a href="{% url 'logout' %}">Logout</a></p>-->
-<!--{% else %}-->
-<!--<p>You are not logged in</p>-->
-<!--<a href="{% url 'login' %}">Login</a>-->
-
-<!--{% endif %}-->
-
   <section class="introduction">
         <h1 class="introduction-title">We are German Mastery</h1>
-        <button class="introduction-btn">Get it</button>
+        <a href="{% url 'main_view:levels' %}"><button class="introduction-btn">Start</button></a>
     </section>
-
     <section class="advantages">
         <h2 class="advantages-title">Our Advantages</h2>
         <ul class="advantages-list">
@@ -30,15 +20,15 @@
         <div class="card-block">
             <div class="card">
                 <img src="" alt="" class="card-image">
-                <p class="course-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, aliquid architecto culpa dignissimos distinctio exercitationem expedita facere molestias mollitia nihil nisi perferendis quod reprehenderit sint sit sunt, tempora temporibus veniam!</p>
+                <p class="course-text">hello</p>
             </div>
             <div class="card">
                 <img src="" alt="" class="card-image">
-                <p class="course-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, aliquid architecto culpa dignissimos distinctio exercitationem expedita facere molestias mollitia nihil nisi perferendis quod reprehenderit sint sit sunt, tempora temporibus veniam!</p>
+                <p class="course-text">helloo2</p>
             </div>
             <div class="card">
                 <img src="" alt="" class="card-image">
-                <p class="course-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, aliquid architecto culpa dignissimos distinctio exercitationem expedita facere molestias mollitia nihil nisi perferendis quod reprehenderit sint sit sunt, tempora temporibus veniam!</p>
+                <p class="course-text">hello3</p>
             </div>
         </div>
     </section>
