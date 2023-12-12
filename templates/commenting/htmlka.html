@@ -8,7 +8,7 @@
     <h1>Welcome to Your Website</h1>
 
     <!-- Форма для комментариев -->
-    <form method="post" action="{% url 'home' %}">
+    <form method="post" action="{% url 'comments' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Submit Comment</button>
@@ -16,9 +16,8 @@
 
     <!-- Список комментариев -->
     <h2>Comments:</h2>
-    {% for comment in comments %}
+    {% for comment in form %}
         <p>{{ comment.name }} - {{ comment.text }}</p>
     {% endfor %}
 </body>
 </html>
->

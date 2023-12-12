@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from .models import Comment
 from .forms import CommentForm
 
-def home(request):
+def comments(request):
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
