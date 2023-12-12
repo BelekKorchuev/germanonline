@@ -16,7 +16,7 @@
 
     <!-- Список комментариев -->
     <h2>Comments:</h2>
-    {% for comment in form %}
+    {% for comment in comments %}
         <p>{{ comment.name }} - {{ comment.text }}</p>
     {% endfor %}
 </body>
