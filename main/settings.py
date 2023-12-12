@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main_view', 'lesson', 'user', 'user_profile',
+    'commenting'
 ]
 
 MIDDLEWARE = [

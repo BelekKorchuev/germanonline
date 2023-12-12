@@ -1,0 +1,24 @@
+<!-- comments/templates/comments/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Website</title>
+</head>
+<body>
+    <h1>Welcome to Your Website</h1>
+
+    <!-- Форма для комментариев -->
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Comment</button>
+    </form>
+
+    <!-- Список комментариев -->
+    <h2>Comments:</h2>
+    {% for comment in comments %}
+        <p>{{ comment.name }} - {{ comment.text }}</p>
+    {% endfor %}
+</body>
+</html>
+>
