@@ -7,7 +7,5 @@ urlpatterns = [
     path('', include('user.urls')),
     path('', TemplateView.as_view(template_name='main_view/home.html'), name='home'),
     path('', include('user_profile.urls')),
-    path('', include('main_view.urls')),
-    path('', include('commenting.urls'))
+    path('', include('main_view.urls'))
 ]
-
