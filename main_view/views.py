@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 
-from .models import OurInformations, ListOfLevels
+from .models import OurInformations, ListOfLevels, ListOfTheme
+
+
 # Create your views here.
 
 class AboutUs(generic.View):
@@ -22,3 +24,10 @@ class LevelList(generic.View):
 #     def get_object(self, **kwargs):
 #         level_id = self.kwargs.get('id')
 #         return get_object_or_404(ListOfLevels, id=level_id)
+
+def themes_for_level(request, level_id):
+    level = get_object_or_404(ListOfLevels, pk=level_id)
+    themes = ListOfTheme.objects.filter(choose_level=level)
+
+    return render(request, 'main_view/level_detail.html', {'level': level, 'themes': themes})
+

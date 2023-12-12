@@ -2,7 +2,7 @@
 
    {% block content %}
    {% for l in level_list %}
-     <h3><a href="#">{{ l.level }}</a></h3>
+     <h3><a href="{% url 'main_view:level_detail' l.id %}">{{ l.level }}</a></h3>
      <p><br>{{ l.description }}<br></p>
    {% endfor %}
    {% endblock %}

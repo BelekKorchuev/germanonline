@@ -18,7 +18,6 @@ class OurInformations(models.Model):
 class ListOfLevels(models.Model):
     level = models.CharField(max_length=15)
     description = models.TextField(max_length=2000)
-    theme = models.CharField(max_length=200, null=False)
 
 
     def __str__(self):
@@ -28,3 +27,13 @@ class ListOfLevels(models.Model):
         verbose_name = 'level'
         verbose_name_plural = 'levels'
 
+class ListOfTheme(models.Model):
+    choose_level = models.ForeignKey(ListOfLevels, on_delete=models.CASCADE)
+    theme = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.theme
+
+    class Meta:
+        verbose_name = 'theme'
+        verbose_name_plural = 'themes'
