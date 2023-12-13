@@ -11,6 +11,5 @@ def comments(request):
             return redirect('home')  # Перенаправление на главную страницу после отправки комментария
     else:
         form = CommentForm()
-
     comments = Comment.objects.all()
-    return render(request, 'commenting/htmlka.html', {'form': form, 'comments': comments})
+    return render(request, 'main_view/home.html', {'form': form, 'comments': comments})

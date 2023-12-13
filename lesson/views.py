@@ -14,10 +14,10 @@ def quiz(request, question_id):
             # Перенаправление на следующий вопрос или результаты
             next_question = question.get_next_question()
             if next_question:
-                return redirect('quiz', question_id=next_question.id)
+                return redirect('lesson:quiz', question_id=next_question.id)
             else:
                 return redirect('quiz_results')
     else:
         form = QuizForm(question)
 
-    return render(request, 'quiz/quiz.html', {'question': question, 'form': form})
+    return render(request, 'lesson/quiz.html', {'question': question, 'form': form})
