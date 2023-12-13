@@ -2,7 +2,7 @@
 
 {% block content %}
 
-  <section class="introduction">
+    <section class="introduction">
         <h1 class="introduction-title">We are German Mastery</h1>
         <a href="{% url 'main_view:levels' %}"><button class="introduction-btn">Start lessons</button></a>
     </section>
@@ -19,17 +19,72 @@
         <h1 class="card-section-title">We have German courses</h1>
         <div class="card-block">
             <div class="card">
-                <img src="" alt="" class="card-image">
+                <img src="https://www.de-online.ru/_nw/9/10248591.jpg" alt="Course 1" class="card-image">
                 <p class="course-text">hello</p>
             </div>
             <div class="card">
-                <img src="" alt="" class="card-image">
+                <img src="https://www.de-online.ru/_nw/1/49163272.jpg" alt="Course 2" class="card-image">
                 <p class="course-text">helloo2</p>
             </div>
             <div class="card">
-                <img src="" alt="" class="card-image">
+                <img src="https://www.de-online.ru/_nw/11/00247521.jpg" alt="Course 3" class="card-image">
                 <p class="course-text">hello3</p>
             </div>
         </div>
     </section>
+<section>
+    <div class="form-comment">
+      <h3>Оставить комментарий</h3>
+      <div>
+        <form method="post">
+          {% csrf_token %}
+          <div>
+            <label>Ваш комментарий</label>
+            <textarea name="text_comments"></textarea>
+          </div>
+          <div>
+            <label>Ваше имя *</label>
+            <input type="text" name="name">
+          </div>
+          <div>
+            <label>Ваше E-mail *</label>
+            <input type="email" name="email">
+          </div>
+          <div><input type="submit"></div>
+        </form>
+      </div>
+    </div>
+
+    <div>
+      {% for comment in comments %}
+        <h4>{{ comment.name }}</h4>
+        <p>
+          {{ comment.text }}
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+</section>
+
+
+
+
+
+<!--    <section>-->
+<!--      &lt;!&ndash; Форма для комментариев &ndash;&gt;-->
+<!--    <form method="post" >-->
+<!--        {% csrf_token %}-->
+<!--        {{ form.as_p }}-->
+<!--        <button type="submit">Submit Comment</button>-->
+<!--    </form>-->
+
+<!--    &lt;!&ndash; Список комментариев &ndash;&gt;-->
+<!--    <h2>Comments:</h2>-->
+<!--    {% for comment in comments %}-->
+<!--        <p>{{ comment.name }} - {{ comment.text }}</p>-->
+<!--    {% endfor %}-->
+<!--     </section>-->
+
+
 {% endblock %}

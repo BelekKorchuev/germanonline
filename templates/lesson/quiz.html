@@ -1,0 +1,13 @@
+{% extends 'main_view/base.html' %}
+
+{% block content %}
+  <h1>Quiz</h1>
+
+  <form method="post" action="{% url 'lesson:quiz' question.id %}">
+    {% csrf_token %}
+    <h3>{{ question.question_text }}</h3>
+    {{ form.as_p }}
+    <button type="submit">Next</button>
+  </form>
+
+{% endblock %}
