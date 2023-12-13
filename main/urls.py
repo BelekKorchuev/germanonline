@@ -9,5 +9,5 @@ urlpatterns = [
     path('', include('user_profile.urls')),
     path('', include('main_view.urls')),
     path('', include('commenting.urls')),
-
+    path('', include('lesson.urls')),
 ]
