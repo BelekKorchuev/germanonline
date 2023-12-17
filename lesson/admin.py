@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Answer, Question
+from .models import Answer, Question, Theory
 # Register your models here.
 
 class AnswerAdmin(admin.StackedInline):
@@ -12,4 +12,4 @@ class QuestionAdmin(admin.ModelAdmin):
 
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Answer)
-
+admin.site.register(Theory)

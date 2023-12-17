@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from main_view.models import ListOfTheme
 
@@ -22,8 +23,21 @@ class Answer(models.Model):
 
 
 class UserAnswer(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     is_correct = models.BooleanField(default=False)
 
+
+    class Meta:
+        unique_together = ('question', 'user')
+
     def __str__(self):
         return f"{self.question.question_text} - {'Correct' if self.is_correct else 'Incorrect'}"
+
+
+class Theory(models.Model):
+    theme_choice = models.ForeignKey(ListOfTheme, on_delete=models.CASCADE)
+    theory = models.TextField()
+
+    def __str__(self):
+        return self.theory

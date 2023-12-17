@@ -108,7 +108,8 @@
 
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import QuizForm
-from .models import Question, UserAnswer
+from .models import Question, UserAnswer, Theory
+from main_view.models import ListOfTheme
 
 
 def view_question(request, question_id):
@@ -170,3 +171,11 @@ def quiz_completed(request):
     }
 
     return render(request, 'lesson/quiz_completed.html', {'results': results})
+
+
+def theory_view(request, theme_id):
+        theme = ListOfThemes.objects.get(pk=theme_id)
+        theory_text = theme.theorytext()  # Вызываем функцию theorytext
+
+        return render(request, 'lesson/theory.html', {'theme': theme, 'theory_text': theory_text})
+
