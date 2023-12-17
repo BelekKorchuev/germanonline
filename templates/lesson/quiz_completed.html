@@ -1,0 +1,26 @@
+<!-- lesson/quiz_completed.html -->
+{% extends 'main_view/base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Completed</title>
+</head>
+<body>
+
+<h1>Quiz Completed</h1>
+
+{% if results %}
+    <p>Correct Answers: {{ results.correct_answers }}</p>
+    <p>Total Questions: {{ results.total_questions }}</p>
+    <p>Percentage Correct: {{ results.percentage_correct }}%</p>
+{% else %}
+    <p>No results available.</p>
+{% endif %}
+
+</body>
+</html>
+{% endblock %}

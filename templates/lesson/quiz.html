@@ -1,13 +1,35 @@
 {% extends 'main_view/base.html' %}
 
 {% block content %}
-  <h1>Quiz</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
 
-  <form method="post" action="{% url 'lesson:quiz' question.id %}">
+<h1>{{ question.question_text }}</h1>
+
+<form method="post" action="{% url 'lesson:view_question' question_id=question.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Отправить ответ</button>
+</form>
+
+</body>
+</html>
+
+
+{% endblock %}
+
+<comment>
+     <h1>Quiz</h1>
+      <form method="post" action="{% url 'lesson:quiz' question.id %}">
     {% csrf_token %}
     <h3>{{ question.question_text }}</h3>
     {{ form.as_p }}
     <button type="submit">Next</button>
-  </form>
-
-{% endblock %}
+      </form>
+</comment>
