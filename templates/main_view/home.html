@@ -34,23 +34,25 @@
     </section>
 <section>
     <div class="form-comment">
-      <h3>Оставить комментарий</h3>
+      <h3>Leave a comment</h3>
       <div>
         <form method="post">
           {% csrf_token %}
           <div>
-            <label>Ваш комментарий</label>
-            <textarea name="text_comments"></textarea>
-          </div>
-          <div>
-            <label>Ваше имя *</label>
+            <label>Your name</label>
             <input type="text" name="name">
           </div>
           <div>
-            <label>Ваше E-mail *</label>
+            <label>Your E-mail</label>
             <input type="email" name="email">
           </div>
-          <div><input type="submit"></div>
+           <div>
+            <label>Your comment</label>
+            <textarea name="text_comments"></textarea>
+          </div>
+          <div>
+              <button type="submit">Submit</button>
+          </div>
         </form>
       </div>
     </div>

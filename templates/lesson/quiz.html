@@ -15,7 +15,7 @@
 <form method="post" action="{% url 'lesson:view_question' question_id=question.id %}">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Отправить ответ</button>
+    <button type="submit">Next</button>
 </form>
 
 </body>

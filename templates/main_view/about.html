@@ -4,13 +4,12 @@
   {% for i in creaters_list %}
     <div class="card w-75">
       <div class="card-body">
-        <h5 class="card-title">{{ i.name }}</h5>
+        <h3 class="card-title">{{ i.name }}</h3>
         <p class="card-text">
           Роль: {{ i.role }}<br>
           Номер телефона: {{ i.phone_number }}<br>
           Электронная почта: {{ i.email }}
         </p>
-        <a href="#" class="btn btn-primary">Button</a>
       </div>
     </div>
   {% endfor %}
