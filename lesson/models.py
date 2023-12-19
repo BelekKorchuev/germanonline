@@ -6,7 +6,7 @@ from main_view.models import ListOfTheme
 class Question(models.Model):
     theme_choice = models.ForeignKey(ListOfTheme, on_delete=models.CASCADE)
     question_text = models.CharField(max_length=500)
-    order = models.PositiveIntegerField(unique=True, default=0)
+    next_question = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return self.question_text

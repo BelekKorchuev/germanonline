@@ -17,7 +17,7 @@ def view_question(request, question_id):
 
         if user_answer.is_correct:
             print("Пользователь уже правильно ответил на вопрос")
-            next_question = get_next_question(question)
+            next_question = get_next_question(question.theme_choice, question)
             if next_question:
                 return redirect('lesson:view_question', question_id=next_question.id)
             else:
@@ -31,9 +31,9 @@ def view_question(request, question_id):
     return render(request, 'lesson/quiz.html', {'question': question, 'form': form})
 
 
-def get_next_question(question):
+def get_next_question(theme, question):
     try:
-        next_question = Question.objects.filter(order__gt=question.order).order_by('order').first()
+        next_question = Question.objects.filter(theme_choice=theme, id=question.next_question_id).first()
         return next_question
     except Question.DoesNotExist:
         return None
@@ -55,7 +55,7 @@ def quiz_completed(request):
 
 def get_next_question_for_theme(theme):
     try:
-        first_question = Question.objects.filter(theme_choice=theme, order=0).first()
+        first_question = Question.objects.filter(theme_choice=theme).first()
         return first_question
     except Question.DoesNotExist:
         return None
@@ -63,7 +63,7 @@ def get_next_question_for_theme(theme):
 
 def theory_view(request, theme_id):
     theme = get_object_or_404(ListOfTheme, pk=theme_id)
-    theory_text = theme.theme_text
+    theory_text = ListOfTheme.objects.filter(theme_text=theme_id)
     first_question = get_next_question_for_theme(theme)
 
     return render(request, 'lesson/theory.html', {'theme': theme, 'theory_text': theory_text, 'first_question': first_question})
