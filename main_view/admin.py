@@ -14,4 +14,3 @@ class LevelAdmin(admin.ModelAdmin):
 admin.site.register(OurInformations)
 admin.site.register(ListOfLevels, LevelAdmin)
 admin.site.register(ListOfTheme)
-

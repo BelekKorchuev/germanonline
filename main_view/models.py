@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+
+
 class OurInformations(models.Model):
     name = models.CharField(max_length=20,)
     role = models.CharField(max_length=50)
@@ -19,7 +21,6 @@ class ListOfLevels(models.Model):
     level = models.CharField(max_length=15)
     description = models.TextField(max_length=2000)
 
-
     def __str__(self):
         return self.level
 
@@ -27,9 +28,11 @@ class ListOfLevels(models.Model):
         verbose_name = 'level'
         verbose_name_plural = 'levels'
 
+
 class ListOfTheme(models.Model):
     choose_level = models.ForeignKey(ListOfLevels, on_delete=models.CASCADE)
     theme = models.CharField(max_length=500)
+    theme_text = models.TextField(default='')
 
     def __str__(self):
         return self.theme
