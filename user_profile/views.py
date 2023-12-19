@@ -3,15 +3,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import UpdateView
-
 from user_profile.forms import ProfileUserForm
 
-
-# def view_profile(request):
-#     context = {
-#         'user': request.user
-#     }
-#     return render(request, 'user_profile/profile.html', context)
 
 class ProfileUser(LoginRequiredMixin, UpdateView):
     model = get_user_model()
@@ -32,4 +25,4 @@ def profile(request):
         'last_name': request.user,
         'email': request.user,
     }
-    return render(request, 'user_profile/profile.html', {'context':context})
+    return render(request, 'user_profile/profile.html', {'context': context})
