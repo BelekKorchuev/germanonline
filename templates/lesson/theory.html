@@ -1,0 +1,15 @@
+<!-- lesson/theory.html -->
+
+{% extends 'main_view/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>{{ theme.theme }}</h2>
+    <div class="theory-text">
+      {{ theory_text|safe }}  <!-- Используйте |safe, чтобы вывести HTML-текст без экранирования -->
+    </div>
+    <a href="{% url 'lesson:view_question' question_id=first_question.id %}">
+      <button class="btn btn-primary">Продолжить</button>
+    </a>
+  </div>
+{% endblock %}

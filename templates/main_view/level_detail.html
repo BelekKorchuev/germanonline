@@ -3,8 +3,8 @@
 {% block content %}
   <h2>Themes for Level {{ level.level }}</h2>
   <ul>
-    {% for theme in themes %}
-      <li><a href="#">{{ theme.theme }}</a></li>
+    {% for th in themes %}
+      <li><a href="{% url 'lesson:theory_view' theme_id=th.id %}">{{ th.theme }}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}
