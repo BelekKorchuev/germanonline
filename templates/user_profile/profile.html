@@ -1,11 +1,25 @@
 {% extends 'main_view/base.html' %}
 
 {% block content %}
-<h1>User Profile</h1>
-<p>Username: {{ user.username }}</p>
-<p>First Name: {{ user.first_name }}</p>
-<p>Last Name: {{ user.last_name }}</p>
-<p>Email: {{ user.email }}</p>
+<div class="container">
+    <h1>User Profile</h1>
+    <p>Username: {{ username }}</p>
+    <p>First Name: {{ first_name }}</p>
+    <p>Last Name: {{ last_name }}</p>
+    <p>Email: {{ email }}</p>
+
+
+    <h3>Level Progress</h3>
+    {% if level_progress %}
+      <ul>
+        {% for progress in level_progress %}
+          <li>{{ progress.level }} - {{ progress.progress }}%</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No level progress available.</p>
+    {% endif %}
+</div>
 
 <a href="{% url 'user_profile:profile_update' %}"><button>Update</button></a>
 {% endblock %}
