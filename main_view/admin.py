@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import OurInformations, ListOfLevels, ListOfTheme
+from .models import OurInformations, ListOfLevels, ListOfTheme, Comment
 # Register your models here.
 
 
@@ -14,3 +14,4 @@ class LevelAdmin(admin.ModelAdmin):
 admin.site.register(OurInformations)
 admin.site.register(ListOfLevels, LevelAdmin)
 admin.site.register(ListOfTheme)
+admin.site.register(Comment)
