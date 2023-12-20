@@ -2,6 +2,7 @@
 from django import forms
 from .models import Comment
 
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
@@ -12,8 +13,7 @@ class CommentForm(forms.ModelForm):
             'text': 'Text',
         }
         widgets = {
-            'email': forms.TextInput(attrs={'class': 'form-unput'}),
-            'name': forms.TextInput(attrs={'class': 'form-unput'}),
-            'text': forms.TextInput(attrs={'class': 'form-unput'}),
+            'email': forms.TextInput(attrs={'class': 'form-input'}),
+            'name': forms.TextInput(attrs={'class': 'form-input'}),
+            'text': forms.Textarea(attrs={'class': 'form-input'}),
         }
-

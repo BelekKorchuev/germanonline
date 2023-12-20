@@ -1,7 +1,6 @@
 # comments/urls.py
 from django.urls import path
-from .views import comments
 
-urlpatterns = [
-    path('', comments, name='comments'),
-]
+
+app_name = 'commenting'
+urlpatterns = []
