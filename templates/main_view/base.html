@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <a href="{% url 'home' %}"><img src="https://www.freepngimg.com/thumb/germany_flag/175275-waving-flag-germany-free-photo.png" alt="Logo" class="logotype"></a>
+        <a href="{% url 'main_view:comments' %}"><img src="https://www.freepngimg.com/thumb/germany_flag/175275-waving-flag-germany-free-photo.png" alt="Logo" class="logotype"></a>
         <div class="navigation">
             <a href="{% url 'main_view:about' %}"><button>About Us</button></a>
             {% if user.is_authenticated %}
