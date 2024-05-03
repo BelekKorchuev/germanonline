@@ -1,0 +1,22 @@
+<section>
+    <div class="form-comment">
+        <h3>Leave a comment</h3>
+        <div>
+            <form method="post" action="{% url 'home' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        {% for c in comment %}
+            <h4>{{ c.name }}</h4>
+            <p>{{ c.text }}</p>
+        {% endfor %}
+    </div>
+</section>
+

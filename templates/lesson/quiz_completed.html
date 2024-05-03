@@ -1,0 +1,19 @@
+<!-- lesson/quiz_completed.html -->
+{% extends 'main_view/base.html' %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Completed</title>
+</head>
+<body>
+
+<h1>Congratulations, you've completed this theme!!</h1>
+
+<p>That's how this lesson ended, if something was not clear you can repeat or continue learning!!</p>
+<a href="{% url 'main_view:comments' %}"><button>Back</button></a>
+</body>
+</html>
+{% endblock %}

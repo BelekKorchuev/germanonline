@@ -1,0 +1,51 @@
+<!-- lesson/theory.html -->
+
+{% extends 'main_view/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>{{ theme.theme }}</h2>
+    <div class="theory-text">
+      {{ theme.theme_text | safe }}  <!-- Используйте |safe, чтобы вывести HTML-текст без экранирования -->
+    </div>
+    <a href="{% url 'lesson:view_question' question_id=first_question.id %}">
+      <button class="btn btn-primary">Continue</button>
+    </a>
+  </div>
+  <style>
+    .container {
+    margin-bottom: 50px; /* Добавим отступ снизу контейнера, чтобы кнопка не была слишком близко к футеру */
+    padding-top: 20px; /* Добавим отступ сверху контейнера */
+    }
+
+    .theme-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+    }
+
+    .theory-text {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .btn-primary {
+    background-color: #4CAF50; /* Зеленый цвет */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    .btn-primary:hover {
+    background-color: #45a049; /* Более темный оттенок зеленого при наведении */
+    }
+  </style>
+{% endblock %}

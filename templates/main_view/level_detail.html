@@ -1,0 +1,10 @@
+{% extends 'main_view/base.html' %}
+
+{% block content %}
+  <h2>Themes for Level {{ level.level }}</h2>
+  <ul>
+    {% for th in themes %}
+      <li><a href="{% url 'lesson:theory_view' theme_id=th.id %}">{{ th.theme }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'main_view/base.html' %}
+
+{% block content %}
+{% for l in level_list %}
+<ul>
+    <li>
+         <h3><a href="{% url 'main_view:level_detail' l.id %}">{{ l.level }}</a></h3>
+     <p><br>{{ l.description }}<br></p>
+    </li>
+
+</ul>
+{% endfor %}
+{% endblock %}
+
+

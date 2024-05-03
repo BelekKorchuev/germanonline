@@ -1,0 +1,17 @@
+{% extends 'main_view/base.html' %}
+
+{% block content %}
+  {% for i in creaters_list %}
+    <div class="card w-75">
+      <div class="card-body">
+        <h3 class="card-title">{{ i.name }}</h3>
+        <p class="card-text">
+          Роль: {{ i.role }}<br>
+          Номер телефона: {{ i.phone_number }}<br>
+          Электронная почта: {{ i.email }}
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}
+
